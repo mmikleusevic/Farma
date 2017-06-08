@@ -1,0 +1,28 @@
+<ul class="pagination text-center" role="navigation" aria-label="Pagination" data-page="6" data-total="16">
+			<li class="pagination-previous">
+				<a href="?uvjet=<?php echo str_replace("%", "", $uvjet); ?>&<?php echo "stranica=" . ($stranica-1) ?>" >Prethodna <span class="show-for-sr">stranica</span></a>
+			</li>
+			
+			<?php 
+			
+			
+			for($i=1;$i<=$ukupnoStranica;$i++):
+			if($i==$stranica):
+			 ?>
+			<li class="current"><span class="show-for-sr">Vi ste na stranici</span> <?php echo $i ?></li>
+
+			
+			<?php else: ?>
+			<li>
+				<a href="?uvjet=<?php echo str_replace("%", "", $uvjet); ?>&stranica=<?php echo $i; ?>" ><?php echo $i; ?></a>
+			</li>
+			
+			<?php endif; ?>
+			
+			<?php endfor; ?>
+			
+			
+			<li class="pagination-next">
+				<a href="?uvjet=<?php echo str_replace("%", "", $uvjet); ?>&<?php echo "stranica=" . ($stranica+1) ?>">Sljedeća<span class="show-for-sr">stranica</span></a>
+			</li>
+		</ul>
